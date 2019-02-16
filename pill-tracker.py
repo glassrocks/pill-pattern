@@ -1,11 +1,12 @@
 import RPi.GPIO as GPIO
 import time
 import threading
+from flask import Flask
 
 
 def start_reading():
 
-    pin_list = (6, 13, 19, 26, 12, 16, 20)
+    PINS = (6, 13, 19, 26, 12, 16, 20)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(6, GPIO.IN)
 
@@ -14,12 +15,10 @@ def start_reading():
     count = 0
 
     try:
-
         while True:
 
             # take a reading
             input = GPIO.input(6)
-            print(f"Type of input: {type(input)}")
             # if the last reading was low and this one high, alert us
             if ((not prev_input) and input):
                 print("Under Pressure")
@@ -37,8 +36,15 @@ def start_reading():
 
 
 def start_website():
-    pass
+    app = Flask(__name__)
+
+    @app.route('/<string:page_name>/')
+    def render_static(page_name):
+        return render_template('%s.html' % page_name)
+
+    return threading.thread(app.run(use_reloader=False))
+
 
 if __name__ == "__main__":
-    reader = threading.Thread(start_reading)
-    website = threading.Thread(start_website)
+    #reader = threading.Thread(start_reading())
+    website = start_website()
