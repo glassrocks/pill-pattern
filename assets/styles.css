@@ -1,59 +1,37 @@
 body, h1,h2, h3, h4, h5, h6 {
   font-family: "Lato", sans-serif;}
 }
+
 body, html {
   height: 100%;
   color: #777;
   line-height: 1.8;
 }
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/*.w3-display-container:hover {
-  .w3-display-hover{display:block}
-  .w3-display-container:hover 
-  span.w3-display-hover{display:inline-block}
-  .w3-display-hover{display:none}
-} */
-
-.img-default {
-  height: 100%;
-  width: 100%;
-}
-
-/* Splash image (Logo. Full height) */
-.bgimg-1 {
-  /*background-image: url("http://uscapsa.org/wp-content/uploads/2015/08/Pills-APSA-Background.jpeg");*/
+body {
   background-image: url("./pills-background.jpeg");
-  height: 300px;
-  width: 300px;
+  background-color: #cccccc;
 }
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("https://cdn.quotesgram.com/small/62/51/1116005458-themasterswordsman-gangsta-spongebob-png.png");
-  top: 0px
+.butts {
+  position: fixed;
+  top: 65%;
+  height: 100px;
+  width: 150px;
+  font-family: "Lato";
+  font-size: 20px;
+  padding: 25px 50px;
 }
 
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FBTn3538QQtI%2Fmaxresdefault.jpg&f=1");
-  min-height: 400px;
+.butt1 {
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.butt2 {
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
