@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta charset="UTF-8"> 
 		<link rel="stylesheet" href="./assets/calendar-styles.css">
 	</head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    var i;
-    //for(i = 0; i < 24; i++) {
-
-    //}
-    var heading;
-    $("cal-heading").css("color": "blue");
-    
-    heading = document.getElementsByClassName("cal-heading");
-    console.log(heading);
-    heading.style.color = "red";
-  </script>
 	<body>
-		<table class="calendar" style="width:50%" border="1">
+		<table class="calendar" style="width: 50%" border="1">
   			<tr class="cal-heading">
   				<th>Sunday</th>
     			<th>Monday</th> 
@@ -26,221 +15,229 @@
     			<th>Friday</th>
     			<th>Saturday</th>
   			</tr>
-  			<tr class="time-1">
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+        <tr class="cal-row-0">
+          <td>12:00 AM</td>
+          <td>12:00 AM</td>
+          <td>12:00 AM</td>
+          <td>12:00 AM</td>
+          <td>12:00 AM</td>
+          <td>12:00 AM</td>
+          <td>12:00 AM</td>
+        </tr>
+  			<tr class="cal-row-1">
+    			<td>01:00 AM</td>
+    			<td>01:00 AM</td>
+    			<td>01:00 AM</td>
+    			<td>01:00 AM</td>
+    			<td>01:00 AM</td>
+    			<td>01:00 AM</td>
+    			<td>01:00 AM</td>
   			</tr>
-  			<tr class="time-2">
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-2">
+    			<td>02:00 AM</td>
+    			<td>02:00 AM</td>
+    			<td>02:00 AM</td>
+    			<td>02:00 AM</td>
+    			<td>02:00 AM</td>
+    			<td>02:00 AM</td>
+    			<td>02:00 AM</td>
   			</tr>
-  			<tr class="time-3">
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-3">
+    			<td>03:00 AM</td>
+    			<td>03:00 AM</td>
+    			<td>03:00 AM</td>
+    			<td>03:00 AM</td>
+    			<td>03:00 AM</td>
+    			<td>03:00 AM</td>
+    			<td>03:00 AM</td>
   			</tr>
-  			<tr class="time-4">
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-4">
+    			<td>04:00 AM</td>
+    			<td>04:00 AM</td>
+    			<td>04:00 AM</td>
+    			<td>04:00 AM</td>
+    			<td>04:00 AM</td>
+    			<td>04:00 AM</td>
+    			<td>04:00 AM</td>
   			</tr>
-  			<tr class="time-5">
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-5">
+    			<td>05:00 AM</td>
+    			<td>05:00 AM</td>
+    			<td>05:00 AM</td>
+    			<td>05:00 AM</td>
+    			<td>05:00 AM</td>
+    			<td>05:00 AM</td>
+    			<td>05:00 AM</td>
   			</tr>
-  			<tr class="time-">
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-6">
+    			<td>06:00 AM</td>
+    			<td>06:00 AM</td>
+    			<td>06:00 AM</td>
+    			<td>06:00 AM</td>
+    			<td>06:00 AM</td>
+    			<td>06:00 AM</td>
+    			<td>06:00 AM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-7">
+    			<td>07:00 AM</td>
+    			<td>07:00 AM</td>
+    			<td>07:00 AM</td>
+    			<td>07:00 AM</td>
+    			<td>07:00 AM</td>
+    			<td>07:00 AM</td>
+    			<td>07:00 AM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-8">
+    			<td>08:00 AM</td>
+    			<td>08:00 AM</td>
+    			<td>08:00 AM</td>
+    			<td>08:00 AM</td>
+    			<td>08:00 AM</td>
+    			<td>08:00 AM</td>
+    			<td>08:00 AM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-9">
+    			<td>09:00 AM</td>
+    			<td>09:00 AM</td>
+    			<td>09:00 AM</td>
+    			<td>09:00 AM</td>
+    			<td>09:00 AM</td>
+    			<td>09:00 AM</td>
+    			<td>09:00 AM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-10">
+    			<td>10:00 AM</td>
+    			<td>10:00 AM</td>
+    			<td>10:00 AM</td>
+    			<td>10:00 AM</td>
+    			<td>10:00 AM</td>
+    			<td>10:00 AM</td>
+    			<td>10:00 AM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-11">
+    			<td>11:00 AM</td>
+    			<td>11:00 AM</td>
+    			<td>11:00 AM</td>
+    			<td>11:00 AM</td>
+    			<td>11:00 AM</td>
+    			<td>11:00 AM</td>
+    			<td>11:00 AM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-12">
+    			<td>12:00 PM</td>
+    			<td>12:00 PM</td>
+    			<td>12:00 PM</td>
+    			<td>12:00 PM</td>
+    			<td>12:00 PM</td>
+    			<td>12:00 PM</td>
+    			<td>12:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-13"> 
+    			<td>01:00 PM</td>
+    			<td>01:00 PM</td>
+    			<td>01:00 PM</td>
+    			<td>01:00 PM</td>
+    			<td>01:00 PM</td>
+    			<td>01:00 PM</td>
+    			<td>01:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-14">
+    			<td>02:00 PM</td>
+    			<td>02:00 PM</td>
+    			<td>02:00 PM</td>
+    			<td>02:00 PM</td>
+    			<td>02:00 PM</td>
+    			<td>02:00 PM</td>
+    			<td>02:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-15">
+    			<td>03:00 PM</td>
+    			<td>03:00 PM</td>
+    			<td>03:00 PM</td>
+    			<td>03:00 PM</td>
+    			<td>03:00 PM</td>
+    			<td>03:00 PM</td>
+    			<td>03:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-16">
+    			<td>04:00 PM</td>
+    			<td>04:00 PM</td>
+    			<td>04:00 PM</td>
+    			<td>04:00 PM</td>
+    			<td>04:00 PM</td>
+    			<td>04:00 PM</td>
+    			<td>04:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-17">
+    			<td>05:00 PM</td>
+    			<td>05:00 PM</td>
+    			<td>05:00 PM</td>
+    			<td>05:00 PM</td>
+    			<td>05:00 PM</td>
+    			<td>05:00 PM</td>
+    			<td>05:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-18">
+    			<td>06:00 PM</td>
+    			<td>06:00 PM</td>
+    			<td>06:00 PM</td>
+    			<td>06:00 PM</td>
+    			<td>06:00 PM</td>
+    			<td>06:00 PM</td>
+    			<td>06:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-19">
+    			<td>07:00 PM</td>
+    			<td>07:00 PM</td>
+    			<td>07:00 PM</td>
+    			<td>07:00 PM</td>
+    			<td>07:00 PM</td>
+    			<td>07:00 PM</td>
+    			<td>07:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-20">
+    			<td>08:00 PM</td>
+    			<td>08:00 PM</td>
+    			<td>08:00 PM</td>
+    			<td>08:00 PM</td>
+    			<td>08:00 PM</td>
+    			<td>08:00 PM</td>
+    			<td>08:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-21">
+    			<td>09:00 PM</td>
+    			<td>09:00 PM</td>
+    			<td>09:00 PM</td>
+    			<td>09:00 PM</td>
+    			<td>09:00 PM</td>
+    			<td>09:00 PM</td>
+    			<td>09:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+        <tr class="cal-row-22">
+    			<td>10:00 PM</td>
+    			<td>10:00 PM</td>
+    			<td>10:00 PM</td>
+    			<td>10:00 PM</td>
+    			<td>10:00 PM</td>
+    			<td>10:00 PM</td>
+    			<td>10:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
+  			<tr class="cal-row-23">
+    			<td>11:00 PM</td>
+    			<td>11:00 PM</td>
+    			<td>11:00 PM</td>
+    			<td>11:00 PM</td>
+    			<td>11:00 PM</td>
+    			<td>11:00 PM</td>
+    			<td>11:00 PM</td>
   			</tr>
-  			<tr>
-    			<td style="background-color: red">Sun 01:00</td>
-    			<td>Mon 01:00</td>
-    			<td>Tue 01:00</td>
-    			<td>Wed 01:00</td>
-    			<td>Thu 01:00</td>
-    			<td>Fri 01:00</td>
-    			<td>Sat 01:00</td>
-  			</tr>
-	</body>
+	  </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/moment.js"></script>  
+    <script type="text/javascript" src="./assets/calendar.js"></script>
+    <script>
+      var t = moment().format('h:mm:ss');
+      alert(t);
+    </script>
+  </body>
 </html>
