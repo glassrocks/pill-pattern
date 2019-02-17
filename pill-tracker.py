@@ -1,50 +1,72 @@
+""" Sensor reader and web server for Pill Pattern"""
+
 import RPi.GPIO as GPIO
 from time import sleep
-import threading
+from threading import Thread
 from flask import Flask, render_template
 
 
 def start_reading():
+    """ Starts a while loop to get data from sensors"""
 
-    PINLIST= (6, 13, 19, 26, 12, 16, 20)
+    global stop_reading
+    stop_reading = True
+    # Setup pin readings
+    PINLIST = (6, 13, 19, 26, 12, 16, 20)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(PINLIST[0], GPIO.IN)
     GPIO.setup(PINLIST[1], GPIO.IN)
 
     # initialise a previous input variable to 0 (Assume no pressure applied)
-    prev_input = 0
+    prev_input = {}
     count = 0
+
+    # Create dictionary to share information with the server
     global pinput
-    pinput = 0
+    pinput = {"Sun": 0,
+              "Mon": 0,
+            # "Tue": 0,
+            # "Wed": 0,
+            # "Thu": 0,
+            # "Fri": 0,
+            # "Sat": 0,
+              }
 
     try:
-        
-        while True:
-            # take a reading
-            pin_outputlist = list()
-            day_sun = GPIO.input(PINLIST[0])
-            day_mon = GPIO.input(PINLIST[1])
-            print("pin 1: {0}".format(day_sun))
-            print("pin 2: {0}".format(day_mon))
-            pin_outputlist.append(GPIO.input(PINLIST[0]))
-            pin_outputlist.append(GPIO.input(PINLIST[1]))
-            print("loop:")
-            for pin_output in range(len(pin_outputlist)):
-                #pinput = pinput + pin_outputlist[pin_output]
-                print(pin_output)
-            print("Pinput is: {0}".format(pinput))
-            # if the last reading was low and this one high, alert us
-            if (prev_input is not pinput):
-                print("Change detected!")
-                count = count + 1
-                print("Num of changes: {0}".format(count))
 
-            input()
+        while stop_reading:
+            # take a reading
+            pin_outputdict = {}
+
+            pinput = {"Sun": GPIO.input(PINLIST[0]),
+                      "Mon": GPIO.input(PINLIST[1]),
+                    # "Tue": GPIO.input(PINLIST[2]),
+                    # "Wed": GPIO.input(PINLIST[3]),
+                    # "Thu": GPIO.input(PINLIST[4]),
+                    # "Fri": GPIO.input(PINLIST[5]),
+                    # "Sat": GPIO.input(PINLIST[6]),
+                      }
+
+            print("pin 1: {0}".format(pinput["Sun"]))
+            print("pin 2: {0}".format(pinput["Mon"]))
+            pin_outputdict = pinput
+            print("loop:")
+            for pin_output in range(len(pin_outputdict)):
+                # pinput = pinput + pin_outputdict[pin_output]
+                print(pin_output)
+            print("Pinput is: {0}".format(pinput["Sun"], pinput["Mon"]))
+            # if the last reading was low and this one high, alert us
+            for key, value in pinput.items():
+                if prev_input[key] is not value:
+                    print("Change detected on the %s sensor!" % (key))
+                    count += 1
+                    print("Num of changes: {0}".format(count))
+
             # update previous input
             prev_input = pinput
-            del pin_outputlist
+            del pin_outputdict
             # slight pause
-            sleep(0.10)
+            sleep(5)
 
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
@@ -53,22 +75,31 @@ def start_reading():
 
 
 def start_website():
-    app = Flask(__name__)
+    """ Starts a Flask webserver to access UI"""
+
+    app = Flask(__name__, static_url_path='/static')
+
+    @app.route('/')
+    def homepage():
+        return render_template("index.html", pinput=pinput)
 
     @app.route('/<string:page_name>/')
     def render_static(page_name):
-        if ".jpeg" in page_name:
-            return render_template('./%s.jpeg' % page_name, )
-        elif page_name != "favicon.ico":
+        if page_name != "favicon.ico":
             if page_name == "calendar":
-                threading.Thread(start_reading())
-            return render_template('./%s.html' % page_name)
+                Thread(start_reading())
+            return render_template('./%s.html' % page_name, pinput=pinput)
         else:
             return ""
 
-    return (threading.Thread(app.run(use_reloader=False)))
+    @app.route('/stop_reader/', methods=['GET', 'POST'])
+    def stop_reader():
+        global stop_reading
+        stop_reading = False
+
+    return (Thread(app.run(use_reloader=False)))
 
 
 if __name__ == "__main__":
-    #website, pins = start_website()
-    start_reading()
+    website = start_website()
+    reader = Thread(start_reading())
