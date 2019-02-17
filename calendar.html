@@ -2,13 +2,11 @@
 <html>
 	<head>
     <meta charset="UTF-8"> 
-<<<<<<< Updated upstream
 		<link rel="stylesheet" href="/static/calendar-styles.css">
-=======
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./assets/calendar-styles.css">
 		<link rel="stylesheet" href="../assets/calendar-styles.css">
->>>>>>> Stashed changes
+    <title>Pill Schedule</title>
 	</head>
 	<body>
     <div class="column center">
@@ -242,16 +240,14 @@
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<<<<<<< Updated upstream
-    <script type="text/javascript" src="/static/moment.js"></script>  
-    <script type="text/javascript" src="/static/calendar.js"></script>
-=======
-    <script type="text/javascript" src="./assets/moment.js"></script>  
-    <script type="text/javascript" src="./assets/calendar.js"></script>
-    <script type="text/javascript" src="./table1.js"></script>
->>>>>>> Stashed changes
+    <script type="text/javascript" src="./static/moment.js"></script>  
+    <script type="text/javascript" src="./static/calendar.js"></script>
     <script>
-      //var t = moment().format('h:mm:ss');
+      var curTime = moment();//.month(0).date(0).hours(4)
+      //.minutes(0).seconds(0).milliseconds(0);
+      var fakeStart = curTime.add(2, 'hours');
+      curTime = curTime.format('h:mm:ss');
+      fakeStart = fakeStart.format('h:mm:ss');
       //alert(t);
     </script>
   </body>

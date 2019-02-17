@@ -1,0 +1,48 @@
+body, h1 ,h2, h3, h4, h5, h6 {
+	font-family: "Lato", sans-serif;
+	height: 100%;
+	line-height: 1.8;
+	background-color: #ffe6ff;
+}
+
+/* Clear floats after the columns */
+.row-overall {
+  column-count: 3;
+  column-width: 50px;
+  /*width: 100%;*/
+}
+
+.column {
+  	width: 100%;
+}
+.left{
+	text-align: center;
+}
+
+.center {
+	color: black;
+}
+
+.last{
+	color: purple;
+}
+
+.calendar {
+	display: table;
+  	margin-left: auto;
+    margin-right: auto;
+    /*width: 75%;*/
+}
+
+.button {
+	text-align: right;
+	/*top: 50%;
+	position: fixed;
+	bottom: 10px;*/
+}
+.group1 {
+	color:yellow;
+}
+.group2 {
+	color: orange;
+}

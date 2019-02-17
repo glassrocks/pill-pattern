@@ -4,11 +4,11 @@ $(document).ready(function(){
   /*$(".calendars").click(function(){
     $(this).css("color", "blue");
   });*/
-  var timeRows;
-  timeRows = $("[class^=cal-row-]").length;
-  for (i = 0; i < timeRows; i++) {
-    $("[class^=cal-day-]").click(function(){
-      $(this).css("background-color", "#80bfff");
+  var time-rows = len($(.cal-row-*));
+  console.log(time-rows)
+  for (i = 0; i < len($(.cal-row-*)); i++) {
+    $("[class^=cal-row-]").click(function(){
+      $(".cal-day-sun", this).css("color", "red");
     });
   }
   n = $("tr").length;

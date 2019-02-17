@@ -5,6 +5,15 @@ from time import sleep
 from threading import Thread
 from flask import Flask, render_template
 
+global pinput
+pinput = {"Sun": 0,
+          "Mon": 0,
+        # "Tue": 0,
+        # "Wed": 0,
+        # "Thu": 0,
+        # "Fri": 0,
+        # "Sat": 0,
+}
 
 def start_reading():
     """ Starts a while loop to get data from sensors"""
@@ -22,15 +31,7 @@ def start_reading():
     count = 0
 
     # Create dictionary to share information with the server
-    global pinput
-    pinput = {"Sun": 0,
-              "Mon": 0,
-            # "Tue": 0,
-            # "Wed": 0,
-            # "Thu": 0,
-            # "Fri": 0,
-            # "Sat": 0,
-              }
+   
 
     try:
 
@@ -54,14 +55,15 @@ def start_reading():
             for pin_output in range(len(pin_outputdict)):
                 # pinput = pinput + pin_outputdict[pin_output]
                 print(pin_output)
-            print("Pinput is: {0}".format(pinput["Sun"], pinput["Mon"]))
             # if the last reading was low and this one high, alert us
             for key, value in pinput.items():
-                if prev_input[key] is not value:
-                    print("Change detected on the %s sensor!" % (key))
-                    count += 1
-                    print("Num of changes: {0}".format(count))
-
+                try:
+                    if prev_input[key] is not value:
+                        print("Change detected on the %s sensor!" % (key))
+                        count += 1
+                        print("Num of changes: {0}".format(count))
+                except KeyError:
+                    print("No previous input!")
             # update previous input
             prev_input = pinput
             del pin_outputdict
