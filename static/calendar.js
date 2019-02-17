@@ -1,11 +1,11 @@
 var i;
 var heading;
 $(document).ready(function(){
-  $("table").click(function(){
+  $(".calendars").click(function(){
     $(this).css("color", "blue");
   });
-  $(".cal-column-1").click(function(){
-    $(this).css("color", "red");
+  $(".cal-row-1").click(function(){
+    $(".cal-day-sun", this).css("color", "red");
   });
   var n, i;
   n = $("tr").length;

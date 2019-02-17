@@ -1,3 +1,8 @@
+body {
+  background-image: url("/pillpattern-final");
+  background-color: #cccccc;
+}
+
 body, h1,h2, h3, h4, h5, h6 {
   font-family: "Lato", sans-serif;}
 }
@@ -6,11 +11,6 @@ body, html {
   height: 100%;
   color: #777;
   line-height: 1.8;
-}
-
-body {
-  background-image: url("../pills-background");
-  background-color: #cccccc;
 }
 
 .butt {
