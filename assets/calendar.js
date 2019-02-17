@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
   var n, i;
   n = $("tr").length;
-  i = $("cal-column-1").length;
+  i = $(".cal-column-1").length;
   //alert(i)
 });
 
