@@ -13,7 +13,7 @@ body {
   background-color: #cccccc;
 }
 
-.butts {
+.butt {
   position: fixed;
   top: 65%;
   height: 100px;
@@ -21,15 +21,7 @@ body {
   font-family: "Lato";
   font-size: 20px;
   padding: 25px 50px;
-}
-
-.butt1 {
   left: 45%;
-  transform: translate(-50%, -50%);
-}
-
-.butt2 {
-  left: 55%;
   transform: translate(-50%, -50%);
 }
 

@@ -1,9 +1,12 @@
-#import RPi.GPIO as GPIO
-import time
+try:
+    import RPi.GPIO as GPIO
+except ModuleNotFoundError:
+    print("Connect raspberry pi")
+from time import sleep
 import threading
 from flask import Flask, render_template
 
-"""
+
 def start_reading():
 
     PINS = (6, 13, 19, 26, 12, 16, 20)
@@ -17,23 +20,23 @@ def start_reading():
     try:
         while True:
 
+            global pinput
             # take a reading
-            input = GPIO.input(6)
+            pinput = GPIO.input(6)
             # if the last reading was low and this one high, alert us
-            if ((not prev_input) and input):
+            if ((not prev_input) and pinput):
                 print("Under Pressure")
                 count = count + 1
                 print(count)
             # update previous input
-            prev_input = input
+            prev_input = pinput
             # slight pause
-            time.sleep(0.10)
+            sleep(0.10)
 
     except KeyboardInterrupt:
-        pass
+        print("KeyboardInterrupt")
     finally:
         GPIO.cleanup()
-"""
 
 
 def start_website():
@@ -48,9 +51,9 @@ def start_website():
         else:
             return ""
 
-    return threading.Thread(app.run(use_reloader=False))
+    return (threading.Thread(app.run(use_reloader=False)))
 
 
 if __name__ == "__main__":
-    #reader = threading.Thread(start_reading())
-    website = start_website()
+    reader = threading.Thread(start_reading())
+    website, pins = start_website()
