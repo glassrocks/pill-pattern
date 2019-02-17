@@ -1,7 +1,4 @@
-try:
-    import RPi.GPIO as GPIO
-except ModuleNotFoundError:
-    print("Connect raspberry pi")
+import RPi.GPIO as GPIO
 from time import sleep
 import threading
 from flask import Flask, render_template
@@ -47,6 +44,8 @@ def start_website():
         if ".jpeg" in page_name:
             return render_template('./%s.jpeg' % page_name)
         elif page_name != "favicon.ico":
+            if page_name == "calendar":
+                threading.Thread(start_reading())
             return render_template('./%s.html' % page_name)
         else:
             return ""
@@ -55,5 +54,4 @@ def start_website():
 
 
 if __name__ == "__main__":
-    reader = threading.Thread(start_reading())
     website, pins = start_website()
